@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blueprint Diagram Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--color-milk-frost);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    padding: var(--space-section) var(--space-comfortable) var(--space-page);
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .eyebrow {
+    display: block;
+    margin-bottom: var(--space-compact);
+  }
+  h1.title {
+    margin: 0 0 var(--space-standard);
+    line-height: 1.15;
+  }
+  .intro {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line-height);
+    color: var(--color-body-ink);
+    max-width: var(--type-body-measure);
+    margin: 0 0 var(--space-section);
+  }
+  section { margin-bottom: var(--space-section); }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--color-pale-sand);
+    padding-bottom: var(--space-compact);
+    margin-bottom: var(--space-compact);
+  }
+  .section-head h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin: 0;
+  }
+  .section-head .tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--color-fog-stone);
+    text-transform: uppercase;
+  }
+  p.note { color: var(--color-body-ink); font-size: 14.5px; line-height: 1.5; }
+
+  /* Swatches */
+  .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .swatch {
+    flex: 1;
+    padding: var(--space-standard) var(--space-compact);
+    font-family: var(--font-sans);
+  }
+  .swatch .name { font-weight: 700; font-size: 13px; margin-bottom: var(--space-rhythm); display: block; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
+  .swatch.light { color: var(--color-ink); }
+  .swatch.dark { color: var(--color-milk-frost); }
+
+  /* Accents table */
+  .table { border: 1px solid var(--color-pale-sand); border-radius: 4px; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .table .cell { padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); }
+  .table .cell:last-child { border-right: none; }
+  .table .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); margin-bottom: var(--space-tight); display: block; }
+
+  .node-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--color-ink); }
+  .tag-pill { display: inline-block; background: var(--color-ink); color: var(--color-milk-frost); font-family: var(--font-mono); font-size: 11px; padding: 4px 10px; border-radius: 3px; }
+  .icon-box { width: 28px; height: 28px; border: 1.5px solid var(--color-ink); border-radius: 6px; }
+
+  /* Type card */
+  .type-card { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-rhythm); background: white; }
+  .type-card .eyebrow { color: var(--color-fog-stone); }
+  .type-card h3 { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); margin: var(--space-compact) 0; color: var(--color-ink); }
+  .type-card h4 { font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); color: var(--color-fog-stone); margin: 0 0 var(--space-standard); }
+  .type-card p { font-size: var(--type-body-size); line-height: var(--type-body-line-height); color: var(--color-body-ink); max-width: var(--type-body-measure); }
+  .type-specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-compact); border-top: 1px solid var(--color-pale-sand); padding-top: var(--space-standard); margin-top: var(--space-standard); }
+  .type-specs .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); display: block; margin-bottom: var(--space-tight); }
+  .type-specs .val { font-size: 13px; color: var(--color-ink); }
+
+  /* Spacing scale */
+  .space-strip { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-standard); background: white; }
+  .space-bars { display: flex; align-items: flex-end; gap: var(--space-compact); margin-bottom: var(--space-tight); }
+  .space-bars .bar { background: var(--color-fog-stone); height: 14px; }
+  .space-labels { display: flex; gap: var(--space-compact); font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-stone); margin-bottom: var(--space-standard); }
+  .space-table .row { display: grid; grid-template-columns: 140px 60px 1fr; padding: var(--space-compact) 0; border-top: 1px solid var(--color-pale-sand); font-size: 13.5px; }
+  .space-table .row:first-child { border-top: none; }
+  .space-table .name { font-weight: 700; }
+  .space-table .px { color: var(--color-fog-stone); font-family: var(--font-mono); }
+  .space-table .use { color: var(--color-body-ink); }
+
+  /* Diagram */
+  .diagram-frame { position: relative; border: 1px solid var(--color-pale-sand); border-radius: 6px; background: var(--color-soft-ivory); height: 340px; overflow: hidden; }
+  .node { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--color-ink); background: var(--color-milk-frost); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--color-ink); }
+  .hub { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: var(--color-ink); }
+  .grid-swatch { position: absolute; display: grid; grid-template-columns: repeat(3, 16px); gap: 4px; }
+  .grid-swatch div { width: 16px; height: 16px; border: 1px solid var(--color-pale-sand); }
+  .bars { position: absolute; display: flex; align-items: flex-end; gap: 6px; }
+  .bars div { width: 12px; background: var(--color-pale-sand); }
+  .caption { text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--color-fog-stone); text-transform: uppercase; margin-top: var(--space-compact); }
+
+  /* Elements list */
+  .element-row { display: grid; grid-template-columns: 32px 200px 1fr; gap: var(--space-standard); padding: var(--space-standard) 0; border-top: 1px solid var(--color-pale-sand); }
+  .element-row:first-child { border-top: none; }
+  .element-num { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-fog-stone); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; }
+  .element-name { font-weight: 700; margin-bottom: 4px; }
+  .element-swatches { font-size: 12px; color: var(--color-fog-stone); }
+  .element-desc { font-size: 14px; line-height: 1.5; color: var(--color-body-ink); }
+
+  footer { text-align: left; font-size: 12px; color: var(--color-fog-stone); border-top: 1px solid var(--color-pale-sand); padding-top: var(--space-standard); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Design system, element sheet, v4</span>
+  <h1 class="title">The Blueprint Diagram design system</h1>
+  <p class="intro">This is the design system behind these diagram illustrations: five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.</p>
+
+  <section>
+    <div class="section-head"><h2>Swatches</h2><span class="tag">Light to dark</span></div>
+    <div class="swatch-row">
+      <div class="swatch light" style="background:#F0EFEC"><span class="name">Milk Frost</span><span class="hex">#F0EFEC</span></div>
+      <div class="swatch light" style="background:#EAE1D7"><span class="name">Soft Ivory</span><span class="hex">#EAE1D7</span></div>
+      <div class="swatch light" style="background:#D8C9B6"><span class="name">Pale Sand</span><span class="hex">#D8C9B6</span></div>
+      <div class="swatch dark" style="background:#828280"><span class="name">Fog Stone</span><span class="hex">#828280</span></div>
+      <div class="swatch dark" style="background:#0D1015"><span class="name">Ink</span><span class="hex">#0D1015</span></div>
+    </div>
+    <p class="note">One derived tone isn't one of the five: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Accents</h2><span class="tag">Five uses, one swatch</span></div>
+    <p class="note">Ink, off the node. Same rule wherever it lands: boldest thing in view, used sparingly, never as a background.</p>
+    <div class="table">
+      <div class="cell"><span class="label">Node</span><div class="node-dot"></div></div>
+      <div class="cell"><span class="label">Emphasis</span>Ship the <strong>draft</strong>, not the plan.</div>
+      <div class="cell"><span class="label">Tag</span><span class="tag-pill">WORKFLOW</span></div>
+      <div class="cell"><span class="label">Underline</span><span style="text-decoration: underline; font-weight:700;">Draft</span></div>
+      <div class="cell"><span class="label">Icon stroke</span><div class="icon-box"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Fonts and headers</h2><span class="tag">Type roles</span></div>
+    <p class="note">Ink carries headlines. Body copy uses one derived tone — Ink brought toward Fog Stone — so long paragraphs don't sit at full headline weight while still holding proper reading contrast. Nothing else on this row is a new color.</p>
+    <div class="type-card">
+      <span class="eyebrow">Content workflow, case study</span>
+      <h3>Ship the draft before the plan is finished</h3>
+      <h4>What changed when we stopped waiting for perfect briefs</h4>
+      <p>Most teams treat the outline as a gate: nothing moves until it's approved. Loosening that one rule is what actually shortened the cycle — drafts started circulating a full day earlier, and the plan caught up around them instead of ahead of them.</p>
+      <div class="type-specs">
+        <div><span class="label">Eyebrow</span><span class="val">IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone</span></div>
+        <div><span class="label">H1</span><span class="val">Work Sans 700, clamp 24–30px, Ink</span></div>
+        <div><span class="label">H2</span><span class="val">Work Sans 600, 18.5px, Fog Stone</span></div>
+        <div><span class="label">Body</span><span class="val">Work Sans 400, 15.5px / 1.5, body ink (derived), max 58ch</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Padding</h2><span class="tag">8 to 96, spacing scale</span></div>
+    <p class="note">Seven steps, each roughly one and a half times the last. Everything on this sheet snaps to one of these — nothing sits in between.</p>
+    <div class="space-strip">
+      <div class="space-bars">
+        <div class="bar" style="width:8px"></div>
+        <div class="bar" style="width:16px"></div>
+        <div class="bar" style="width:24px"></div>
+        <div class="bar" style="width:32px"></div>
+        <div class="bar" style="width:48px"></div>
+        <div class="bar" style="width:64px"></div>
+        <div class="bar" style="width:96px"></div>
+      </div>
+      <div class="space-labels"><span>8</span><span>16</span><span>24</span><span>32</span><span>48</span><span>64</span><span>96</span></div>
+      <div class="space-table">
+        <div class="row"><span class="name">Tight</span><span class="px">8px</span><span class="use">Icon and label gaps, swatch-pill spacing, tag internals</span></div>
+        <div class="row"><span class="name">Compact</span><span class="px">16px</span><span class="use">Grid gaps, swatch and accent cell padding, spec-row gaps</span></div>
+        <div class="row"><span class="name">Standard</span><span class="px">24px</span><span class="use">Element-row padding, section notes, accent-cell padding</span></div>
+        <div class="row"><span class="name">Comfortable</span><span class="px">32px</span><span class="use">Page side margin, padding-scale strip padding</span></div>
+        <div class="row"><span class="name">Rhythm</span><span class="px">48px</span><span class="use">Type-card internal padding</span></div>
+        <div class="row"><span class="name">Section</span><span class="px">64px</span><span class="use">Space between major sections, page top padding</span></div>
+        <div class="row"><span class="name">Page</span><span class="px">96px</span><span class="use">Page bottom padding, page close</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>The diagram</h2><span class="tag">Same six roles, one artboard</span></div>
+    <p class="note">The reference artboard the rest of this sheet is drawn from.</p>
+    <div class="diagram-frame">
+      <div class="node" style="top:20px; left:20px;">1</div>
+      <div class="grid-swatch" style="top:20px; left:400px;">
+        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:#D8C9B6"></div>
+        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:transparent"></div>
+        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:transparent"></div>
+      </div>
+      <div class="node" style="top:14px; left:470px;">3</div>
+      <div class="node" style="top:70px; left:580px;">4</div>
+      <div class="hub" style="top:150px; left:170px;"></div>
+      <div class="node" style="top:195px; left:110px; width:22px; height:22px;">5</div>
+      <div class="node" style="top:180px; left:250px; width:22px; height:22px;">6</div>
+      <div class="bars" style="bottom:40px; left:400px;">
+        <div style="height:10px;"></div><div style="height:20px;"></div><div style="height:30px;"></div><div style="height:40px;"></div><div style="height:55px;"></div>
+      </div>
+      <div class="node" style="bottom:30px; left:480px;">2</div>
+    </div>
+    <p class="caption">Same six elements, your five swatches — numbers key to the list below</p>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>The elements</h2><span class="tag">1–6, lightest to boldest role</span></div>
+    <p class="note">Numbers key to the diagram in the section above.</p>
+    <div class="element-row">
+      <div class="element-num">1</div>
+      <div><div class="element-name">Field</div><div class="element-swatches">○ Milk Frost ○ Soft Ivory</div></div>
+      <div class="element-desc">Your two lightest swatches, as the gradient ground. This is exactly the role they'd play in a lookbook too — restrained enough that nothing competes with what's on top of it.</div>
+    </div>
+    <div class="element-row">
+      <div class="element-num">2</div>
+      <div><div class="element-name">Guide layer</div><div class="element-swatches">○ Pale Sand</div></div>
+      <div class="element-desc">Bounds arrows, axis, diagonal ticks — all in Pale Sand. Light enough to recede, warm enough that it never reads as generic UI grey.</div>
+    </div>
+    <div class="element-row">
+      <div class="element-num">3</div>
+      <div><div class="element-name">Structure</div><div class="element-swatches">○ Fog Stone</div></div>
+      <div class="element-desc">Connector line, hub stroke, and measurement text all share Fog Stone — the mid tone doing triple duty as "this is deliberate, but it's not the point."</div>
+    </div>
+    <div class="element-row">
+      <div class="element-num">4</div>
+      <div><div class="element-name">Cluster satellites</div><div class="element-swatches">○ Pale Sand ○ Fog Stone outline</div></div>
+      <div class="element-desc">Same mixed solid-and-outline dots, your two mid tones. No Ink here on purpose — it stays reserved for one job only.</div>
+    </div>
+    <div class="element-row">
+      <div class="element-num">5</div>
+      <div><div class="element-name">Focal point</div><div class="element-swatches">○ Ink</div></div>
+      <div class="element-desc">The one swatch that appears nowhere else. Darkest, coldest, and the only element on the page allowed that distinction — everything else stays lighter than this, always.</div>
+    </div>
+    <div class="element-row">
+      <div class="element-num">6</div>
+      <div><div class="element-name">Type, in diagram</div><div class="element-swatches">○ Fog Stone ○ Ink</div></div>
+      <div class="element-desc">Measurements stay in Fog Stone mono — data, not prose. Diagram labels sit in Ink. Headlines and paragraphs get their own read above, under Fonts and headers.</div>
+    </div>
+  </section>
+
+  <footer>Blueprint Diagram design system · element sheet v4</footer>
+
+</div>
+</body>
+</html>
