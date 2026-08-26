@@ -1,62 +1,70 @@
 /* ==========================================================================
-The Blueprint Diagram Design System — tokens
-Design system - element sheet - v4
-========================================================================== */
+   The Blueprint Diagram Design System — tokens
+   Design system · element sheet · v4
+   ========================================================================== */
 
 :root {
+  /* ---- Color: the five swatches (light to dark) ---- */
   --color-milk-frost: #F0EFEC;
   --color-soft-ivory: #EAE1D7;
-  --color-pale-sand: #D8C9B6;
-  --color-fog-stone: #828280;
-  --color-ink: #0D1015;
+  --color-pale-sand:  #D8C9B6;
+  --color-fog-stone:  #828280;
+  --color-ink:        #0D1015;
 
---color-body-ink: #48494B;
+  /* Derived tone — not one of the five, used only for long-paragraph
+     reading contrast (an even split of Ink and Fog Stone). */
+  --color-body-ink:   #48494B;
 
---color-field-1: var(--color-milk-frost);
-  --color-field-2: var(--color-soft-ivory);
-  --color-guide-layer: var(--color-pale-sand);
-  --color-structure: var(--color-fog-stone);
-  --color-cluster-solid: var(--color-pale-sand);
+  /* ---- Color: role aliases ---- */
+  --color-field-1:        var(--color-milk-frost);
+  --color-field-2:        var(--color-soft-ivory);
+  --color-guide-layer:    var(--color-pale-sand);
+  --color-structure:      var(--color-fog-stone);
+  --color-cluster-solid:  var(--color-pale-sand);
   --color-cluster-outline: var(--color-fog-stone);
-  --color-focal-point: var(--color-ink);
-  --color-type-data: var(--color-fog-stone);
-  --color-type-label: var(--color-ink);
-  --color-accent: var(--color-ink);
+  --color-focal-point:    var(--color-ink);
+  --color-type-data:      var(--color-fog-stone);
+  --color-type-label:     var(--color-ink);
+  --color-accent:         var(--color-ink); /* nodes, emphasis, tags, underline, icon stroke */
 
---font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  /* ---- Typography ---- */
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
 
---type-eyebrow-font: var(--font-mono);
+  --type-eyebrow-font: var(--font-mono);
   --type-eyebrow-weight: 500;
   --type-eyebrow-size: 11.5px;
   --type-eyebrow-tracking: 0.14em;
   --type-eyebrow-color: var(--color-fog-stone);
 
---type-h1-font: var(--font-sans);
+  --type-h1-font: var(--font-sans);
   --type-h1-weight: 700;
   --type-h1-size: clamp(24px, 4vw, 30px);
   --type-h1-color: var(--color-ink);
 
---type-h2-font: var(--font-sans);
+  --type-h2-font: var(--font-sans);
   --type-h2-weight: 600;
   --type-h2-size: 18.5px;
   --type-h2-color: var(--color-fog-stone);
 
---type-body-font: var(--font-sans);
+  --type-body-font: var(--font-sans);
   --type-body-weight: 400;
   --type-body-size: 15.5px;
   --type-body-line-height: 1.5;
   --type-body-color: var(--color-body-ink);
   --type-body-measure: 58ch;
 
---space-tight: 8px;
-  --space-compact: 16px;
-  --space-standard: 24px;
-  --space-comfortable: 32px;
-  --space-rhythm: 48px;
-  --space-section: 64px;
-  --space-page: 96px;
+  /* ---- Spacing scale: 8 → 96, ~1.5x per step ---- */
+  --space-tight: 8px;        /* icon/label gaps, swatch-pill spacing, tag internals */
+  --space-compact: 16px;     /* grid gaps, swatch/accent cell padding, spec-row gaps */
+  --space-standard: 24px;    /* element-row padding, section notes, accent-cell padding */
+  --space-comfortable: 32px; /* page side margin, padding-scale strip padding */
+  --space-rhythm: 48px;      /* type-card internal padding */
+  --space-section: 64px;     /* space between major sections, page top padding */
+  --space-page: 96px;        /* page bottom padding, page close */
 }
+
+/* ---- Utility classes (optional, safe to delete if unused) ---- */
 
 .eyebrow {
   font-family: var(--type-eyebrow-font);
@@ -81,7 +89,7 @@ h2, .h2 {
   color: var(--type-h2-color);
 }
 
-body, .body-text {
+.body-text {
   font-family: var(--type-body-font);
   font-weight: var(--type-body-weight);
   font-size: var(--type-body-size);
