@@ -1,14 +1,13 @@
 # Nataliya's Style Guide
 
+## Live page
 *Style guide · v12 · 3 September 2026*
+
+[View the style guide](https://arlandex.github.io/design-system/)
 
 Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate Mineral colourway is reserved for specific information-architecture HTML pages.
 
 This repo is the reusable, code-side version of the system: a static reference sheet (`index.html`), CSS custom properties (`tokens.css`), and the same values as plain JSON (`tokens.json`), so the palette, type scale, and spacing scale can be pulled into other projects without re-deriving them from the artifact each time.
-
-## Live page
-
-- [View the style guide](https://arlandex.github.io/design-system/)
 
 ## Colour swatches (light to dark)
 
