@@ -59,6 +59,7 @@
 
   /* Swatches */
   .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .swatch-row.green-colourway { margin-top: var(--space-compact); border-color: #C1D0BB; }
   .swatch {
     flex: 1;
     padding: var(--space-standard) var(--space-compact);
@@ -100,25 +101,6 @@
   .space-table .px { color: var(--color-fog-stone); font-family: var(--font-mono); }
   .space-table .use { color: var(--color-body-ink); }
 
-  /* Diagram */
-  .diagram-frame { position: relative; border: 1px solid var(--color-pale-sand); border-radius: 6px; background: var(--color-soft-ivory); height: 340px; overflow: hidden; }
-  .node { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--color-ink); background: var(--color-milk-frost); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--color-ink); }
-  .hub { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: var(--color-ink); }
-  .grid-swatch { position: absolute; display: grid; grid-template-columns: repeat(3, 16px); gap: 4px; }
-  .grid-swatch div { width: 16px; height: 16px; border: 1px solid var(--color-pale-sand); }
-  .bars { position: absolute; display: flex; align-items: flex-end; gap: 6px; }
-  .bars div { width: 12px; background: var(--color-pale-sand); }
-  .caption { text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--color-fog-stone); text-transform: uppercase; margin-top: var(--space-compact); }
-
-  /* Elements list */
-  .element-row { display: grid; grid-template-columns: 32px 200px 1fr; gap: var(--space-standard); padding: var(--space-standard) 0; border-top: 1px solid var(--color-pale-sand); }
-  .element-row:first-child { border-top: none; }
-  .element-num { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-fog-stone); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; }
-  .element-name { font-weight: 700; margin-bottom: 4px; }
-  .element-swatches { font-size: 12px; color: var(--color-fog-stone); }
-  .element-desc { font-size: 14px; line-height: 1.5; color: var(--color-body-ink); }
-
-  footer { text-align: left; font-size: 12px; color: var(--color-fog-stone); border-top: 1px solid var(--color-pale-sand); padding-top: var(--space-standard); }
 </style>
 </head>
 <body>
@@ -137,7 +119,14 @@
       <div class="swatch dark" style="background:#828280"><span class="name">Fog Stone</span><span class="hex">#828280</span></div>
       <div class="swatch dark" style="background:#0D1015"><span class="name">Ink</span><span class="hex">#0D1015</span></div>
     </div>
-    <p class="note">One derived tone isn't one of the five: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
+    <div class="swatch-row green-colourway" aria-label="GPT example green colourway, light to dark">
+      <div class="swatch light" style="background:#FBFCFA"><span class="name">Cloud White</span><span class="hex">#FBFCFA</span></div>
+      <div class="swatch light" style="background:#F1F5EF"><span class="name">Sage Frost</span><span class="hex">#F1F5EF</span></div>
+      <div class="swatch light" style="background:#C1D0BB"><span class="name">Sage Frame</span><span class="hex">#C1D0BB</span></div>
+      <div class="swatch dark" style="background:#6E8768"><span class="name">Moss</span><span class="hex">#6E8768</span></div>
+      <div class="swatch dark" style="background:#253028"><span class="name">Forest Ink</span><span class="hex">#253028</span></div>
+    </div>
+    <p class="note">The green colourway comes from the published GPT example. One derived warm-neutral tone isn't shown: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
   </section>
 
   <section>
@@ -194,66 +183,6 @@
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="section-head"><h2>The diagram</h2><span class="tag">Same six roles, one artboard</span></div>
-    <p class="note">The reference artboard the rest of this sheet is drawn from.</p>
-    <div class="diagram-frame">
-      <div class="node" style="top:20px; left:20px;">1</div>
-      <div class="grid-swatch" style="top:20px; left:400px;">
-        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:#D8C9B6"></div>
-        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:transparent"></div>
-        <div style="background:transparent"></div><div style="background:transparent"></div><div style="background:transparent"></div>
-      </div>
-      <div class="node" style="top:14px; left:470px;">3</div>
-      <div class="node" style="top:70px; left:580px;">4</div>
-      <div class="hub" style="top:150px; left:170px;"></div>
-      <div class="node" style="top:195px; left:110px; width:22px; height:22px;">5</div>
-      <div class="node" style="top:180px; left:250px; width:22px; height:22px;">6</div>
-      <div class="bars" style="bottom:40px; left:400px;">
-        <div style="height:10px;"></div><div style="height:20px;"></div><div style="height:30px;"></div><div style="height:40px;"></div><div style="height:55px;"></div>
-      </div>
-      <div class="node" style="bottom:30px; left:480px;">2</div>
-    </div>
-    <p class="caption">Same six elements, your five swatches — numbers key to the list below</p>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>The elements</h2><span class="tag">1–6, lightest to boldest role</span></div>
-    <p class="note">Numbers key to the diagram in the section above.</p>
-    <div class="element-row">
-      <div class="element-num">1</div>
-      <div><div class="element-name">Field</div><div class="element-swatches">○ Milk Frost ○ Soft Ivory</div></div>
-      <div class="element-desc">Your two lightest swatches, as the gradient ground. This is exactly the role they'd play in a lookbook too — restrained enough that nothing competes with what's on top of it.</div>
-    </div>
-    <div class="element-row">
-      <div class="element-num">2</div>
-      <div><div class="element-name">Guide layer</div><div class="element-swatches">○ Pale Sand</div></div>
-      <div class="element-desc">Bounds arrows, axis, diagonal ticks — all in Pale Sand. Light enough to recede, warm enough that it never reads as generic UI grey.</div>
-    </div>
-    <div class="element-row">
-      <div class="element-num">3</div>
-      <div><div class="element-name">Structure</div><div class="element-swatches">○ Fog Stone</div></div>
-      <div class="element-desc">Connector line, hub stroke, and measurement text all share Fog Stone — the mid tone doing triple duty as "this is deliberate, but it's not the point."</div>
-    </div>
-    <div class="element-row">
-      <div class="element-num">4</div>
-      <div><div class="element-name">Cluster satellites</div><div class="element-swatches">○ Pale Sand ○ Fog Stone outline</div></div>
-      <div class="element-desc">Same mixed solid-and-outline dots, your two mid tones. No Ink here on purpose — it stays reserved for one job only.</div>
-    </div>
-    <div class="element-row">
-      <div class="element-num">5</div>
-      <div><div class="element-name">Focal point</div><div class="element-swatches">○ Ink</div></div>
-      <div class="element-desc">The one swatch that appears nowhere else. Darkest, coldest, and the only element on the page allowed that distinction — everything else stays lighter than this, always.</div>
-    </div>
-    <div class="element-row">
-      <div class="element-num">6</div>
-      <div><div class="element-name">Type, in diagram</div><div class="element-swatches">○ Fog Stone ○ Ink</div></div>
-      <div class="element-desc">Measurements stay in Fog Stone mono — data, not prose. Diagram labels sit in Ink. Headlines and paragraphs get their own read above, under Fonts and headers.</div>
-    </div>
-  </section>
-
-  <footer>Blueprint Diagram design system · element sheet v4</footer>
 
 </div>
 </body>
