@@ -72,8 +72,13 @@
   p.note { color: var(--color-body-ink); font-size: 14.5px; line-height: 1.5; }
 
   /* Swatches */
+  .palette-label { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-compact); margin: 0 0 var(--space-tight); }
+  .palette-label + .swatch-row { margin-top: 0; }
+  .palette-label.contextual { margin-top: var(--space-standard); }
+  .palette-label .palette-name { font-size: 13px; font-weight: 700; color: var(--color-ink); }
+  .palette-label .palette-use { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); text-align: right; }
   .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
-  .swatch-row.green-colourway { margin-top: var(--space-compact); border-color: #C1D0BB; }
+  .swatch-row.green-colourway { border-color: #C1D0BB; }
   .swatch {
     flex: 1;
     padding: var(--space-standard) var(--space-compact);
@@ -125,16 +130,24 @@
     <span class="release-pill">V5 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
   <h1 class="title">The Blueprint Diagram design system</h1>
-  <p class="intro">This is the design system behind these diagram illustrations: five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.</p>
+  <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The green colourway is a contextual alternative reserved for specific information-architecture pages, such as the published GPT example; it does not replace the default.</p>
 
   <section>
     <div class="section-head"><h2>Swatches</h2><span class="tag">Light to dark</span></div>
+    <div class="palette-label">
+      <span class="palette-name">Default · Warm neutral</span>
+      <span class="palette-use">Use across general pages</span>
+    </div>
     <div class="swatch-row">
       <div class="swatch light" style="background:#F0EFEC"><span class="name">Milk Frost</span><span class="hex">#F0EFEC</span></div>
       <div class="swatch light" style="background:#EAE1D7"><span class="name">Soft Ivory</span><span class="hex">#EAE1D7</span></div>
       <div class="swatch light" style="background:#D8C9B6"><span class="name">Pale Sand</span><span class="hex">#D8C9B6</span></div>
       <div class="swatch dark" style="background:#828280"><span class="name">Fog Stone</span><span class="hex">#828280</span></div>
       <div class="swatch dark" style="background:#0D1015"><span class="name">Ink</span><span class="hex">#0D1015</span></div>
+    </div>
+    <div class="palette-label contextual">
+      <span class="palette-name">Contextual · Green</span>
+      <span class="palette-use">Information-architecture HTML only</span>
     </div>
     <div class="swatch-row green-colourway" aria-label="GPT example green colourway, light to dark">
       <div class="swatch light" style="background:#FBFCFA"><span class="name">Cloud White</span><span class="hex">#FBFCFA</span></div>
@@ -143,7 +156,7 @@
       <div class="swatch dark" style="background:#6E8768"><span class="name">Moss</span><span class="hex">#6E8768</span></div>
       <div class="swatch dark" style="background:#253028"><span class="name">Forest Ink</span><span class="hex">#253028</span></div>
     </div>
-    <p class="note">The green colourway comes from the published GPT example. One derived warm-neutral tone isn't shown: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
+    <p class="note">The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional. One derived warm-neutral tone isn't shown: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
   </section>
 
   <section>
