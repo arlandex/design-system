@@ -88,6 +88,20 @@
   .swatch .hex { font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
   .swatch.light { color: var(--color-ink); }
   .swatch.dark { color: var(--color-milk-frost); }
+  .supporting-token {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: var(--space-compact);
+    margin-top: var(--space-tight);
+    padding: 10px 12px;
+    border: 1px solid var(--color-pale-sand);
+    border-radius: 4px;
+  }
+  .supporting-token .sample { width: 44px; height: 28px; border-radius: 3px; background: var(--color-body-ink); }
+  .supporting-token .token-name { display: block; font-size: 12px; font-weight: 700; }
+  .supporting-token .token-value { font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-stone); }
+  .supporting-token .token-use { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); text-align: right; }
 
   /* Accents table */
   .table { border: 1px solid var(--color-pale-sand); border-radius: 4px; display: grid; grid-template-columns: repeat(5, 1fr); }
@@ -127,7 +141,7 @@
 
   <div class="release-line">
     <span class="eyebrow">Design system · Element sheet</span>
-    <span class="release-pill">V5 <span aria-hidden="true">|</span> 3 September 2026</span>
+    <span class="release-pill">V6 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
   <h1 class="title">The Blueprint Diagram design system</h1>
   <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The green colourway is a contextual alternative reserved for specific information-architecture pages, such as the published GPT example; it does not replace the default.</p>
@@ -142,8 +156,13 @@
       <div class="swatch light" style="background:#F0EFEC"><span class="name">Milk Frost</span><span class="hex">#F0EFEC</span></div>
       <div class="swatch light" style="background:#EAE1D7"><span class="name">Soft Ivory</span><span class="hex">#EAE1D7</span></div>
       <div class="swatch light" style="background:#D8C9B6"><span class="name">Pale Sand</span><span class="hex">#D8C9B6</span></div>
-      <div class="swatch dark" style="background:#828280"><span class="name">Fog Stone</span><span class="hex">#828280</span></div>
+      <div class="swatch dark" style="background:#6C6D6C"><span class="name">Fog Stone</span><span class="hex">#6C6D6C</span></div>
       <div class="swatch dark" style="background:#0D1015"><span class="name">Ink</span><span class="hex">#0D1015</span></div>
+    </div>
+    <div class="supporting-token" aria-label="Supporting reading token, Body Ink, #48494B">
+      <span class="sample" aria-hidden="true"></span>
+      <span><span class="token-name">Supporting reading tone · Body Ink</span><span class="token-value">#48494B</span></span>
+      <span class="token-use">Long-form body copy</span>
     </div>
     <div class="palette-label contextual">
       <span class="palette-name">Contextual · Green</span>
@@ -156,7 +175,7 @@
       <div class="swatch dark" style="background:#6E8768"><span class="name">Moss</span><span class="hex">#6E8768</span></div>
       <div class="swatch dark" style="background:#253028"><span class="name">Forest Ink</span><span class="hex">#253028</span></div>
     </div>
-    <p class="note">The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional. One derived warm-neutral tone isn't shown: body-copy ink (<strong>#48494B</strong>), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.</p>
+    <p class="note">The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional. Body Ink is shown separately because it is a supporting accessibility token for long-form copy, not a sixth base swatch.</p>
   </section>
 
   <section>
