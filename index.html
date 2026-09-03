@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=9">
+<link rel="stylesheet" href="tokens.css?v=10">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -78,7 +78,7 @@
   .palette-label .palette-name { font-size: 13px; font-weight: 700; color: var(--color-ink); }
   .palette-label .palette-use { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); text-align: right; }
   .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
-  .swatch-row.green-colourway { border-color: #C1D0BB; }
+  .swatch-row.mineral-colourway { border-color: #C6D1CE; }
   .swatch {
     flex: 1 1 0;
     min-width: 0;
@@ -128,10 +128,10 @@
 
   <div class="release-line">
     <span class="eyebrow">Design system · Element sheet</span>
-    <span class="release-pill">V9 <span aria-hidden="true">|</span> 3 September 2026</span>
+    <span class="release-pill">V10 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
   <h1 class="title">The Blueprint Diagram design system</h1>
-  <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The green colourway is a contextual alternative reserved for specific information-architecture pages, such as the published GPT example; it does not replace the default.</p>
+  <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The Mineral colourway is a contextual alternative reserved for specific information-architecture pages; it does not replace the default.</p>
 
   <section>
     <div class="section-head"><h2>Swatches</h2><span class="tag">Light to dark</span></div>
@@ -148,18 +148,18 @@
       <div class="swatch dark" style="background:#0D1015"><span class="name">Ink</span><span class="hex">#0D1015</span></div>
     </div>
     <div class="palette-label contextual">
-      <span class="palette-name">Contextual · Green</span>
+      <span class="palette-name">Contextual · Mineral</span>
       <span class="palette-use">Information-architecture HTML only</span>
     </div>
-    <div class="swatch-row green-colourway" aria-label="GPT example green colourway, light to dark">
-      <div class="swatch light" style="background:#FBFCFA"><span class="name">Cloud White</span><span class="hex">#FBFCFA</span></div>
-      <div class="swatch light" style="background:#F1F5EF"><span class="name">Sage Frost</span><span class="hex">#F1F5EF</span></div>
-      <div class="swatch light" style="background:#C1D0BB"><span class="name">Sage Frame</span><span class="hex">#C1D0BB</span></div>
-      <div class="swatch dark" style="background:#6E8768"><span class="name">Moss</span><span class="hex">#6E8768</span></div>
-      <div class="swatch dark" style="background:#5F6D61"><span class="name">Body Ink</span><span class="hex">#5F6D61</span></div>
-      <div class="swatch dark" style="background:#253028"><span class="name">Forest Ink</span><span class="hex">#253028</span></div>
+    <div class="swatch-row mineral-colourway" aria-label="Mineral contextual colourway, light to dark">
+      <div class="swatch light" style="background:#F2F5F4"><span class="name">Mineral Frost</span><span class="hex">#F2F5F4</span></div>
+      <div class="swatch light" style="background:#E3E9E7"><span class="name">Pale Mineral</span><span class="hex">#E3E9E7</span></div>
+      <div class="swatch light" style="background:#C6D1CE"><span class="name">Sea Glass</span><span class="hex">#C6D1CE</span></div>
+      <div class="swatch dark" style="background:#63716D"><span class="name">Mineral Stone</span><span class="hex">#63716D</span></div>
+      <div class="swatch dark" style="background:#414C48"><span class="name">Body Ink</span><span class="hex">#414C48</span></div>
+      <div class="swatch dark" style="background:#0D1512"><span class="name">Ink</span><span class="hex">#0D1512</span></div>
     </div>
-    <p class="note">Both palettes contain six aligned system colours, including their own Body Ink reading tone in the fifth position. Body Ink is a functional neutral, not an accent. The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional.</p>
+    <p class="note">Both palettes contain six aligned system colours, including their own Body Ink reading tone in the fifth position. Body Ink is a functional neutral, not an accent. The Mineral colourway is used only where that information-architecture treatment is intentional.</p>
   </section>
 
   <section>
