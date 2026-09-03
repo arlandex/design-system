@@ -6,6 +6,10 @@ Five color tokens and a set of diagram roles, translated from a Pinterest moodbo
 
 This repo is the reusable, code-side version of the system: a static reference sheet (`index.html`), CSS custom properties (`tokens.css`), and the same values as plain JSON (`tokens.json`), so the palette, type scale, and spacing scale can be pulled into other projects without re-deriving them from the artifact each time.
 
+## Live page
+
+- [View the design system](https://arlandex.github.io/design-system/)
+
 ## Swatches (light to dark)
 
 | Name | Hex |
