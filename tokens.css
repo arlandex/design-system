@@ -1,19 +1,16 @@
 /* ==========================================================================
    The Blueprint Diagram Design System — tokens
-   Design system · element sheet · v4
+   Design system · element sheet · v7
    ========================================================================== */
 
 :root {
-  /* ---- Color: the five swatches (light to dark) ---- */
+  /* ---- Default warm-neutral palette: six swatches (light to dark) ---- */
   --color-milk-frost: #F0EFEC;
   --color-soft-ivory: #EAE1D7;
   --color-pale-sand:  #D8C9B6;
   --color-fog-stone:  #6C6D6C;
+  --color-body-ink:   #48494B; /* Long-form reading tone; not an accent. */
   --color-ink:        #0D1015;
-
-  /* Derived tone — not one of the five, used only for long-paragraph
-     reading contrast (an even split of Ink and Fog Stone). */
-  --color-body-ink:   #48494B;
 
   /* ---- Color: role aliases ---- */
   --color-field-1:        var(--color-milk-frost);
