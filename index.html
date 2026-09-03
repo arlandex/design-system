@@ -80,7 +80,8 @@
   .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
   .swatch-row.green-colourway { border-color: #C1D0BB; }
   .swatch {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
     padding: var(--space-standard) var(--space-compact);
     font-family: var(--font-sans);
   }
@@ -127,7 +128,7 @@
 
   <div class="release-line">
     <span class="eyebrow">Design system · Element sheet</span>
-    <span class="release-pill">V8 <span aria-hidden="true">|</span> 3 September 2026</span>
+    <span class="release-pill">V9 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
   <h1 class="title">The Blueprint Diagram design system</h1>
   <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The green colourway is a contextual alternative reserved for specific information-architecture pages, such as the published GPT example; it does not replace the default.</p>
@@ -155,9 +156,10 @@
       <div class="swatch light" style="background:#F1F5EF"><span class="name">Sage Frost</span><span class="hex">#F1F5EF</span></div>
       <div class="swatch light" style="background:#C1D0BB"><span class="name">Sage Frame</span><span class="hex">#C1D0BB</span></div>
       <div class="swatch dark" style="background:#6E8768"><span class="name">Moss</span><span class="hex">#6E8768</span></div>
+      <div class="swatch dark" style="background:#5F6D61"><span class="name">Body Ink</span><span class="hex">#5F6D61</span></div>
       <div class="swatch dark" style="background:#253028"><span class="name">Forest Ink</span><span class="hex">#253028</span></div>
     </div>
-    <p class="note">The default warm-neutral palette has six system colours. Body Ink is its reading tone for long-form copy; it is a functional neutral, not an accent. The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional.</p>
+    <p class="note">Both palettes contain six aligned system colours, including their own Body Ink reading tone in the fifth position. Body Ink is a functional neutral, not an accent. The green colourway comes from the published GPT example and is used only where that information-architecture treatment is intentional.</p>
   </section>
 
   <section>
