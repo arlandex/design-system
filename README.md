@@ -1,11 +1,11 @@
 # Nataliya's Style Guide
 
 ## Live page
-*Style guide · v12 · 3 September 2026*
+*Style guide · v13 · 3 September 2026*
 
-[View the style guide](https://arlandex.github.io/design-system/)
+[View the style guide](https://arlandex.github.io/design-system/?v=13)
 
-Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate Mineral colourway is reserved for specific information-architecture HTML pages.
+Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate Mineral colourway is reserved for specific information-architecture HTML pages, and Cool Grey is reserved for wireframing only.
 
 This repo is the reusable, code-side version of the system: a static reference sheet (`index.html`), CSS custom properties (`tokens.css`), and the same values as plain JSON (`tokens.json`), so the palette, type scale, and spacing scale can be pulled into other projects without re-deriving them from the artifact each time.
 
@@ -36,6 +36,21 @@ Reserved for specific information-architecture HTML pages.
 | Ink | `#0D1512` |
 
 The Mineral Body Ink is the contextual palette's long-form reading tone. Both strips use six aligned positions.
+
+### Contextual Cool Grey palette
+
+Reserved for wireframing only.
+
+| Name | Hex |
+|---|---|
+| Frost | `#F4F5F6` |
+| Soft Grey | `#E6E8EA` |
+| Pale Steel | `#CDD1D4` |
+| Steel Stone | `#686D72` |
+| Body Ink | `#464B50` |
+| Ink | `#101419` |
+
+Cool Grey uses the same six aligned positions as the default and Mineral colourways.
 
 ## Accents
 

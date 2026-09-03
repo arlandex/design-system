@@ -6,8 +6,8 @@
 <title>Nataliya's Style Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=12">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css?v=13">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -55,6 +55,7 @@
     align-items: center;
     gap: var(--space-compact);
     background: var(--color-fog-stone);
+    border: 1px solid var(--color-section-header-border);
     border-radius: 8px;
     padding: 10px var(--space-compact);
     margin-bottom: var(--space-compact);
@@ -62,17 +63,19 @@
   .section-head h2 {
     font-size: 20px;
     font-weight: 700;
+    line-height: 1;
     color: var(--color-milk-frost);
     margin: 0;
   }
   .section-head .tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
+    font: 500 11px/1 var(--font-mono);
+    font-style: normal;
     letter-spacing: 0.08em;
     color: var(--color-milk-frost);
     text-transform: uppercase;
   }
   p.note { color: var(--color-body-ink); font-size: 14.5px; line-height: 1.5; }
+  .component-rule { margin: var(--space-tight) 0 0; color: var(--color-body-ink); font-size: 13.5px; line-height: 1.4; }
 
   /* Colour swatches */
   .palette-label { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-compact); margin: 0 0 var(--space-tight); }
@@ -82,6 +85,7 @@
   .palette-label .palette-use { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); text-align: right; }
   .swatch-row { display: flex; height: 152px; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
   .swatch-row.mineral-colourway { border-color: #C6D1CE; }
+  .swatch-row.cool-grey-colourway { border-color: #CDD1D4; }
   .swatch {
     flex: 1 1 0;
     min-width: 0;
@@ -116,7 +120,7 @@
   .type-role .hex { color: inherit; font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
 
   /* Type card */
-  .type-card { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-rhythm); background: white; }
+  .type-card { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-rhythm); background: var(--color-soft-ivory); }
   .type-card .eyebrow { color: var(--color-fog-stone); }
   .type-card h3 { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); margin: var(--space-compact) 0; color: var(--color-ink); }
   .type-card h4 { font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); color: var(--color-fog-stone); margin: 0 0 var(--space-standard); }
@@ -127,15 +131,98 @@
   .type-specs .val { font-size: 13px; color: var(--color-ink); }
 
   /* Spacing scale */
-  .space-strip { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-standard); background: white; }
-  .space-bars { display: flex; align-items: flex-end; gap: var(--space-compact); margin-bottom: var(--space-tight); }
-  .space-bars .bar { background: var(--color-fog-stone); height: 14px; }
-  .space-labels { display: flex; gap: var(--space-compact); font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-stone); margin-bottom: var(--space-standard); }
-  .space-table .row { display: grid; grid-template-columns: 140px 60px 1fr; padding: var(--space-tight) 0; border-top: 1px solid var(--color-pale-sand); font-size: var(--type-body-size); }
+  .space-strip { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-standard); background: var(--color-soft-ivory); }
+  .space-bars { display: flex; align-items: flex-start; gap: var(--space-compact); margin-bottom: var(--space-standard); }
+  .space-step { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-tight); }
+  .space-bars .bar { display: block; background: var(--color-fog-stone); height: 14px; }
+  .bar-label { font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-stone); }
+  .space-table .row { display: grid; grid-template-columns: 140px 104px 1fr; padding: var(--space-tight) 0; border-top: 1px solid var(--color-pale-sand); font-size: var(--type-body-size); }
   .space-table .row:first-child { border-top: none; }
-  .space-table .name { font-weight: 700; }
-  .space-table .px { color: var(--color-fog-stone); font-family: var(--font-mono); }
+  .space-table .name { font-weight: 700; color: var(--color-body-ink); }
+  .space-table .px { color: var(--color-fog-stone); font-family: var(--font-mono); padding-right: var(--space-comfortable); }
   .space-table .use { color: var(--color-body-ink); }
+
+  /* Information-architecture roles */
+  .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .role-item { min-height: 120px; padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); border-bottom: 1px solid var(--color-pale-sand); display: flex; flex-direction: column; gap: var(--space-tight); }
+  .role-item:nth-child(3n) { border-right: none; }
+  .role-item:nth-last-child(-n+3) { border-bottom: none; }
+  .role-item .role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); }
+  .role-item .token { font-weight: 700; }
+  .role-item .use { color: var(--color-body-ink); font-size: 13.5px; line-height: 1.4; }
+  .role-chip { width: 20px; height: 20px; border-radius: 3px; border: 1px solid var(--color-sea-glass); }
+
+  /* Structural controls */
+  .control-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .control-item { min-height: 132px; padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); }
+  .control-item:last-child { border-right: none; }
+  .control-demo { min-height: 42px; display: flex; align-items: center; gap: var(--space-tight); margin-top: var(--space-standard); }
+  .control-copy { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: var(--space-tight); }
+  .level-tile { width: var(--size-ia-primary-marker); height: var(--size-ia-primary-marker); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-ia-primary-marker); background: var(--color-mineral-body-ink); color: var(--color-mineral-frost); font-family: var(--font-mono); font-size: var(--type-ia-primary-marker-size); font-weight: 700; }
+  .level-tile.secondary { width: var(--size-ia-secondary-marker); height: var(--size-ia-secondary-marker); border-radius: var(--radius-control); background: var(--color-mineral-stone); font-size: var(--type-ia-code-meta-size); }
+  .control-spec { display: block; color: var(--color-mineral-stone); font-family: var(--font-mono); font-size: 9.5px; }
+  .disclosure { color: var(--color-mineral-body-ink); font-family: var(--font-mono); font-size: 20px; font-weight: 700; }
+
+  /* Information-architecture type scale */
+  .ia-type-scale { border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; margin-bottom: var(--space-standard); }
+  .ia-type-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: var(--space-compact); padding: var(--space-tight) var(--space-compact); border-top: 1px solid var(--color-pale-sand); }
+  .ia-type-row:first-child { border-top: none; }
+  .ia-type-row .role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); }
+  .ia-type-row .spec { font-family: var(--font-mono); font-size: 11px; color: var(--color-body-ink); }
+  .sample-l1 { font-size: var(--type-ia-level-1-size); font-weight: var(--type-ia-level-1-weight); }
+  .sample-l2 { font-size: var(--type-ia-level-2-size); font-weight: var(--type-ia-level-2-weight); }
+  .sample-l3 { font-size: var(--type-ia-level-3-size); font-weight: var(--type-ia-level-3-weight); }
+  .sample-compact { font-size: var(--type-compact-copy-size); color: var(--color-body-ink); }
+  .sample-meta { font-family: var(--font-mono); font-size: var(--type-ia-code-meta-size); font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--color-fog-stone); }
+  .sample-subcard-meta { font-family: var(--font-mono); font-size: var(--type-ia-subcard-meta-size); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-fog-stone); }
+
+  /* Cards, elevation and interaction */
+  .surface-demo { padding: var(--space-standard); border: 1px solid var(--color-sea-glass); border-radius: var(--radius-card-outer); background: var(--color-mineral-frost); }
+  .surface-card { overflow: hidden; border: 1px solid var(--color-sea-glass); border-radius: var(--radius-card-inner); background: var(--color-pale-mineral); box-shadow: var(--shadow-raised-mineral); }
+  .surface-card .surface-head { padding: var(--space-compact); background: var(--color-pale-mineral); font-weight: 700; color: var(--color-mineral-ink); }
+  .surface-card .surface-body { padding: var(--space-compact); border-top: 1px solid var(--color-sea-glass); background: var(--color-mineral-frost); color: var(--color-mineral-body-ink); font-size: 13.5px; line-height: 1.4; }
+  .geometry-label { margin: var(--space-standard) 0 var(--space-tight); font-weight: 700; color: var(--color-ink); }
+  .geometry-strip { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .geometry-strip .item { min-height: 80px; padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); font-size: 13px; color: var(--color-body-ink); }
+  .geometry-strip .item:last-child { border-right: none; }
+  .geometry-strip .item strong { display: block; color: var(--color-ink); }
+  .interaction-strip { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .interaction-item { padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); }
+  .interaction-item:last-child { border-right: none; }
+  .interaction-demo { width: 100%; min-height: 40px; margin-top: var(--space-standard); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-sea-glass); border-radius: var(--radius-control); color: var(--color-mineral-body-ink); background: var(--color-mineral-frost); }
+  .interaction-demo.hover { background: var(--color-pale-mineral); }
+  .interaction-demo.focus { outline: var(--focus-ring-width) solid var(--color-mineral-body-ink); outline-offset: var(--focus-ring-offset); }
+  .interaction-demo.edit-focus { border-radius: var(--radius-edit-focus); outline: var(--focus-ring-width) solid var(--color-mineral-body-ink); outline-offset: var(--focus-edit-offset); }
+  .interaction-demo.open .disclosure { transform: rotate(90deg); }
+
+  /* Wide information-architecture canvas */
+  .canvas-rule { overflow: hidden; border: 1px solid var(--color-pale-sand); border-radius: 4px; padding: var(--space-standard); background: var(--color-soft-ivory); }
+  .canvas-rail { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-compact); margin-bottom: var(--space-standard); }
+  .canvas-rail span { height: 36px; border: 1px solid var(--color-pale-sand); border-radius: var(--radius-control); background: var(--color-mineral-frost); }
+  .rule-list { margin: 0; padding-left: 0; color: var(--color-body-ink); list-style: none; }
+  .rule-list li + li { margin-top: var(--space-tight); }
+  .canvas-metrics { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: var(--space-standard); border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .canvas-metric { padding: var(--space-tight); border-right: 1px solid var(--color-pale-sand); color: var(--color-body-ink); font-size: 12px; }
+  .canvas-metric:last-child { border-right: none; }
+  .canvas-metric strong { display: block; color: var(--color-ink); }
+  .canvas-rule-title { margin: var(--space-standard) 0 0; color: var(--color-ink); font-weight: 700; }
+
+  @media (max-width: 700px) {
+    body { padding: var(--space-comfortable) var(--space-compact) var(--space-section); }
+    .role-grid, .control-strip, .interaction-strip { grid-template-columns: 1fr; }
+    .role-item, .control-item, .interaction-item { border-right: none; border-bottom: 1px solid var(--color-pale-sand); }
+    .role-item:last-child, .control-item:last-child, .interaction-item:last-child { border-bottom: none; }
+    .ia-type-row { grid-template-columns: 1fr; gap: var(--space-tight); }
+    .geometry-strip { grid-template-columns: repeat(2, 1fr); }
+    .canvas-metrics { grid-template-columns: repeat(2, 1fr); }
+    .canvas-metric { border-bottom: 1px solid var(--color-pale-sand); }
+    .canvas-metric:nth-child(2n) { border-right: none; }
+    .canvas-metric:last-child { border-bottom: none; }
+    .geometry-strip .item { border-right: 1px solid var(--color-pale-sand); border-bottom: 1px solid var(--color-pale-sand); }
+    .geometry-strip .item:nth-child(2n) { border-right: none; }
+    .geometry-strip .item:nth-last-child(-n+2) { border-bottom: none; }
+    .type-card { padding: var(--space-standard); }
+  }
 
 </style>
 </head>
@@ -144,10 +231,10 @@
 
   <div class="release-line">
     <span class="eyebrow">Style guide</span>
-    <span class="release-pill">V12 <span aria-hidden="true">|</span> 3 September 2026</span>
+    <span class="release-pill">V13 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
   <h1 class="title">Nataliya's style guide</h1>
-  <p class="intro">This style guide supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The Mineral colourway is a contextual alternative reserved for specific information-architecture pages; it does not replace the default.</p>
+  <p class="intro">This style guide supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. Mineral is reserved for specific information-architecture pages, while Cool Grey is reserved for wireframing only; neither replaces the default.</p>
 
   <section>
     <div class="section-head"><h2>Colour swatches</h2><span class="tag">Light to dark</span></div>
@@ -175,12 +262,37 @@
       <div class="swatch dark" style="background:#414C48"><span class="name">Body Ink</span><span class="hex">#414C48</span></div>
       <div class="swatch dark" style="background:#0D1512"><span class="name">Ink</span><span class="hex">#0D1512</span></div>
     </div>
-    <p class="note">Both palettes contain six aligned system colours, including their own Body Ink reading tone in the fifth position. Body Ink is a functional neutral, not an accent. The Mineral colourway is used only where that information-architecture treatment is intentional.</p>
+    <div class="palette-label contextual">
+      <span class="palette-name">Contextual · Cool Grey</span>
+      <span class="palette-use">Wireframing only</span>
+    </div>
+    <div class="swatch-row cool-grey-colourway" aria-label="Cool Grey wireframing colourway, light to dark">
+      <div class="swatch light" style="background:#F4F5F6"><span class="name">Frost</span><span class="hex">#F4F5F6</span></div>
+      <div class="swatch light" style="background:#E6E8EA"><span class="name">Soft Grey</span><span class="hex">#E6E8EA</span></div>
+      <div class="swatch light" style="background:#CDD1D4"><span class="name">Pale Steel</span><span class="hex">#CDD1D4</span></div>
+      <div class="swatch dark" style="background:#686D72"><span class="name">Steel Stone</span><span class="hex">#686D72</span></div>
+      <div class="swatch dark" style="background:#464B50"><span class="name">Body Ink</span><span class="hex">#464B50</span></div>
+      <div class="swatch dark" style="background:#101419"><span class="name">Ink</span><span class="hex">#101419</span></div>
+    </div>
+    <p class="note">All three colourways contain six aligned system colours, including their own Body Ink reading tone in the fifth position. Body Ink is a functional neutral, not an accent. Mineral is used only where its information-architecture treatment is intentional; Cool Grey is used only for wireframing.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Information architecture</h2><span class="tag">Mineral roles</span></div>
+    <p class="note">C2 Product Anatomy V8 is the source of truth for information-architecture layout, hierarchy, typography and interaction rules. The Mineral palette is mapped by function, not just lightness. Structural controls use Body Ink and Mineral Stone to communicate hierarchy. They are not focal accents. No white surface is part of this colourway.</p>
+    <div class="role-grid" aria-label="Mineral information-architecture colour roles">
+      <div class="role-item"><span class="role">Canvas</span><span class="role-chip" style="background:#F2F5F4"></span><span class="token">Mineral Frost</span><span class="use">Page and diagram ground</span></div>
+      <div class="role-item"><span class="role">Surface</span><span class="role-chip" style="background:#E3E9E7"></span><span class="token">Pale Mineral</span><span class="use">Cards and grouped headers</span></div>
+      <div class="role-item"><span class="role">Border</span><span class="role-chip" style="background:#C6D1CE"></span><span class="token">Sea Glass</span><span class="use">Dividers and card boundaries</span></div>
+      <div class="role-item"><span class="role">Secondary structure</span><span class="role-chip" style="background:#63716D"></span><span class="token">Mineral Stone</span><span class="use">Secondary codes and metadata</span></div>
+      <div class="role-item"><span class="role">Structural control</span><span class="role-chip" style="background:#414C48"></span><span class="token">Body Ink</span><span class="use">Hierarchy markers and controls</span></div>
+      <div class="role-item"><span class="role">Primary</span><span class="role-chip" style="background:#0D1512"></span><span class="token">Ink</span><span class="use">Primary type and focal emphasis</span></div>
+    </div>
   </section>
 
   <section>
     <div class="section-head"><h2>Accents</h2><span class="tag">Approved accent uses</span></div>
-    <p class="note">Use the active colourway's Ink token for accents. The five treatments below are the currently approved uses, not a limit on future patterns. Any new use should serve the same focal or signalling purpose, remain the boldest element in view and never become a page background.</p>
+    <p class="note">Use the active colourway's Ink token for focal accents. The five treatments below are the currently approved uses, not a limit on future patterns. Structural controls are defined separately because they support hierarchy rather than focal emphasis.</p>
     <div class="table">
       <div class="cell"><span class="label">Node</span><div class="node-dot"></div></div>
       <div class="cell"><span class="label">Emphasis</span>Ship the <strong>draft</strong>, not the plan.</div>
@@ -191,8 +303,19 @@
   </section>
 
   <section>
+    <div class="section-head"><h2>Structural controls</h2><span class="tag">Hierarchy, not accent</span></div>
+    <p class="note">Information-architecture pages may use Body Ink and the fourth palette tone for persistent navigation and hierarchy markers. These elements should remain quieter than primary Ink.</p>
+    <div class="control-strip">
+      <div class="control-item"><span class="label">Primary level</span><div class="control-demo"><span class="level-tile">1</span><div class="control-copy"><strong>Body Ink</strong><span class="control-spec">42px | 17px | 9px radius</span></div></div></div>
+      <div class="control-item"><span class="label">Secondary level</span><div class="control-demo"><span class="level-tile secondary">1.1</span><div class="control-copy"><strong>Mineral Stone</strong><span class="control-spec">36px | 10.5px | 8px radius</span></div></div></div>
+      <div class="control-item"><span class="label">Disclosure</span><div class="control-demo"><span class="disclosure">›</span><strong>Body Ink stroke</strong></div></div>
+    </div>
+    <p class="component-rule">Use the primary dimensions for Level 1 markers and the secondary dimensions for Level 2 markers</p>
+  </section>
+
+  <section>
     <div class="section-head"><h2>Fonts and headers</h2><span class="tag">Type roles</span></div>
-    <p class="note">Three colour roles create the type hierarchy in the default colourway. Mineral pages use the corresponding Mineral tokens in the same roles.</p>
+    <p class="note">Source Sans 3 carries content and hierarchy. IBM Plex Mono carries metadata, codes and measurements. Information-architecture pages use the three hierarchy levels and the two named metadata roles below.</p>
     <div class="type-role-strip" aria-label="Default colourway type roles">
       <div class="type-role">
         <span class="label">Headlines</span>
@@ -210,14 +333,22 @@
         <span class="hex">#48494B</span>
       </div>
     </div>
+    <div class="ia-type-scale" aria-label="Information-architecture type scale">
+      <div class="ia-type-row"><span class="role">Level 1</span><span class="sample-l1">Business scope</span><span class="spec">20px / 700 / Ink</span></div>
+      <div class="ia-type-row"><span class="role">Level 2</span><span class="sample-l2">Use case definition</span><span class="spec">16.5px / 700 / Ink</span></div>
+      <div class="ia-type-row"><span class="role">Level 3</span><span class="sample-l3">Business Outcome</span><span class="spec">14.5px / 700 / Ink</span></div>
+      <div class="ia-type-row"><span class="role">Compact copy</span><span class="sample-compact">A short definition inside a dense card</span><span class="spec">13.5px / 1.4 / Body Ink</span></div>
+      <div class="ia-type-row"><span class="role">Codes and descriptors</span><span class="sample-meta">121 | Questions</span><span class="spec">IBM Plex Mono 10.5px / 500</span></div>
+      <div class="ia-type-row"><span class="role">Subcard metadata</span><span class="sample-subcard-meta">Level 2 | 3 categories</span><span class="spec">IBM Plex Mono 9.5px / 500</span></div>
+    </div>
     <div class="type-card">
       <span class="eyebrow">Content workflow, case study</span>
       <h3>Ship the draft before the plan is finished</h3>
       <h4>What changed when we stopped waiting for perfect briefs</h4>
-      <p>Most teams treat the outline as a gate: nothing moves until it's approved. Loosening that one rule is what actually shortened the cycle.</p>
-      <p>Drafts started circulating a full day earlier, and the plan caught up around them instead of ahead of them.</p>
+      <p>Most teams treat the outline as a gate: nothing moves until it's approved. Loosening that one rule is what actually shortened the cycle. Early drafts gave reviewers something concrete to challenge, so missing assumptions surfaced before they became expensive dependencies.</p>
+      <p>Drafts started circulating a full day earlier, and the plan caught up around them instead of ahead of them. Decisions became easier to sequence, handovers carried more context, and the team could keep moving without pretending the brief was finished.</p>
       <div class="type-specs">
-        <div><span class="label">Eyebrow</span><span class="val">IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone</span></div>
+        <div><span class="label">Context label</span><span class="val">Small uppercase line above a title. IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone</span></div>
         <div><span class="label">H1</span><span class="val">Source Sans 3 700, clamp 24–30px, Ink</span></div>
         <div><span class="label">H2</span><span class="val">Source Sans 3 600, 18.5px, Fog Stone</span></div>
         <div><span class="label">Body</span><span class="val">Source Sans 3 400, 15.5px / 1.4, Body Ink, full width</span></div>
@@ -226,27 +357,79 @@
   </section>
 
   <section>
+    <div class="section-head"><h2>Cards and elevation</h2><span class="tag">Bounded hierarchy</span></div>
+    <p class="note">Use elevation only for bounded interactive or nested cards. Palette tones create the surface hierarchy. White is not an approved surface token.</p>
+    <div class="surface-demo">
+      <div class="surface-card">
+        <div class="surface-head">Pale Mineral grouped header</div>
+        <div class="surface-body">Mineral Frost content surface, Sea Glass boundary and a Mineral Ink shadow at low opacity</div>
+      </div>
+    </div>
+    <p class="geometry-label">Corner radius by component type</p>
+    <div class="geometry-strip" aria-label="Approved corner radius by component type">
+      <div class="item"><strong>4px radius</strong>Tags</div>
+      <div class="item"><strong>8px radius</strong>Controls</div>
+      <div class="item"><strong>10px radius</strong>Inner cards</div>
+      <div class="item"><strong>12px radius</strong>Outer cards</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Interaction states</h2><span class="tag">Visible and accessible</span></div>
+    <p class="note">Interactive hierarchy must remain clear with a pointer, keyboard or reduced-motion setting. Use the active colourway's structural tokens for states.</p>
+    <div class="interaction-strip">
+      <div class="interaction-item"><span class="label">Default</span><div class="interaction-demo">Closed</div></div>
+      <div class="interaction-item"><span class="label">Hover</span><div class="interaction-demo hover">Pale fill</div></div>
+      <div class="interaction-item"><span class="label">Focus</span><div class="interaction-demo focus">2px ring</div></div>
+      <div class="interaction-item"><span class="label">Edit focus</span><div class="interaction-demo edit-focus">2px / +3px</div></div>
+      <div class="interaction-item"><span class="label">Open</span><div class="interaction-demo open"><span class="disclosure">›</span></div></div>
+    </div>
+    <p class="component-rule">Use the standard focus geometry for navigation controls and the edit-focus geometry for editable text fields</p>
+  </section>
+
+  <section>
     <div class="section-head"><h2>Padding</h2><span class="tag">8 to 96, spacing scale</span></div>
-    <p class="note">Seven steps, each roughly one and a half times the last. Everything on this sheet snaps to one of these. Nothing sits in between.</p>
+    <p class="note">Seven macro layout steps, each roughly one and a half times the last. General page rhythm, section gaps and grid spacing snap to this scale. Information-architecture layout and component rules are documented with their components.</p>
     <div class="space-strip">
       <div class="space-bars">
-        <div class="bar" style="width:8px"></div>
-        <div class="bar" style="width:16px"></div>
-        <div class="bar" style="width:24px"></div>
-        <div class="bar" style="width:32px"></div>
-        <div class="bar" style="width:48px"></div>
-        <div class="bar" style="width:64px"></div>
-        <div class="bar" style="width:96px"></div>
+        <div class="space-step"><span class="bar" style="width:8px"></span><span class="bar-label">8</span></div>
+        <div class="space-step"><span class="bar" style="width:16px"></span><span class="bar-label">16</span></div>
+        <div class="space-step"><span class="bar" style="width:24px"></span><span class="bar-label">24</span></div>
+        <div class="space-step"><span class="bar" style="width:32px"></span><span class="bar-label">32</span></div>
+        <div class="space-step"><span class="bar" style="width:48px"></span><span class="bar-label">48</span></div>
+        <div class="space-step"><span class="bar" style="width:64px"></span><span class="bar-label">64</span></div>
+        <div class="space-step"><span class="bar" style="width:96px"></span><span class="bar-label">96</span></div>
       </div>
-      <div class="space-labels"><span>8</span><span>16</span><span>24</span><span>32</span><span>48</span><span>64</span><span>96</span></div>
       <div class="space-table">
         <div class="row"><span class="name">Tight</span><span class="px">8px</span><span class="use">Icon and label gaps, swatch-pill spacing, tag internals</span></div>
         <div class="row"><span class="name">Compact</span><span class="px">16px</span><span class="use">Grid gaps, swatch and accent cell padding, spec-row gaps</span></div>
         <div class="row"><span class="name">Standard</span><span class="px">24px</span><span class="use">Element-row padding, section notes, accent-cell padding</span></div>
-        <div class="row"><span class="name">Comfortable</span><span class="px">32px</span><span class="use">Page side margin, padding-scale strip padding</span></div>
+        <div class="row"><span class="name">Comfortable</span><span class="px">32px</span><span class="use">Default page side margin, padding-scale strip padding</span></div>
         <div class="row"><span class="name">Rhythm</span><span class="px">48px</span><span class="use">Type-card internal padding</span></div>
-        <div class="row"><span class="name">Section</span><span class="px">64px</span><span class="use">Space between major sections, page top padding</span></div>
-        <div class="row"><span class="name">Page</span><span class="px">96px</span><span class="use">Page bottom padding, page close</span></div>
+        <div class="row"><span class="name">Section</span><span class="px">64px</span><span class="use">Space between major sections, default page top padding</span></div>
+        <div class="row"><span class="name">Page</span><span class="px">96px</span><span class="use">Default page bottom padding, page close</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Wide canvas</h2><span class="tag">Responsive diagrams</span></div>
+    <p class="note">Dense information architecture may preserve its horizontal relationships instead of stacking into a misleading order.</p>
+    <div class="canvas-rule">
+      <div class="canvas-rail" aria-hidden="true"><span></span><span></span><span></span></div>
+      <ul class="rule-list">
+        <li>Keep the hierarchy at a minimum canvas width of 1280px</li>
+        <li>Allow horizontal scrolling on smaller viewports and show a clear overflow cue</li>
+        <li>Keep page-level controls visible outside the scrolling canvas</li>
+      </ul>
+      <p class="canvas-rule-title">Wide information-architecture layout rules</p>
+      <p class="component-rule">These tested component values sit alongside the macro scale: 16px, 48px and 64px reuse Compact, Rhythm and Section; 22px and 40px are specific to the wide-canvas layout.</p>
+      <div class="canvas-metrics" aria-label="Wide information-architecture layout rules, smallest to largest">
+        <div class="canvas-metric"><strong>16px</strong>Nested gap</div>
+        <div class="canvas-metric"><strong>22px</strong>Primary gap</div>
+        <div class="canvas-metric"><strong>40px</strong>Top inset</div>
+        <div class="canvas-metric"><strong>48px</strong>Side insets</div>
+        <div class="canvas-metric"><strong>64px</strong>Bottom inset</div>
       </div>
     </div>
   </section>

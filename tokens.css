@@ -1,6 +1,6 @@
 /* ==========================================================================
    Nataliya's Style Guide, tokens
-   Style guide · v12
+   Style guide · v13
    ========================================================================== */
 
 :root {
@@ -20,6 +20,14 @@
   --color-mineral-body-ink:  #414C48; /* Long-form reading tone; not an accent. */
   --color-mineral-ink:       #0D1512;
 
+  /* ---- Wireframing Cool Grey palette: six swatches (light to dark) ---- */
+  --color-cool-grey-frost:       #F4F5F6;
+  --color-cool-grey-soft:        #E6E8EA;
+  --color-cool-grey-pale-steel:  #CDD1D4;
+  --color-cool-grey-steel-stone: #686D72;
+  --color-cool-grey-body-ink:    #464B50; /* Long-form reading tone; not an accent. */
+  --color-cool-grey-ink:         #101419;
+
   /* ---- Color: role aliases ---- */
   --color-field-1:        var(--color-milk-frost);
   --color-field-2:        var(--color-soft-ivory);
@@ -31,6 +39,19 @@
   --color-type-data:      var(--color-fog-stone);
   --color-type-label:     var(--color-ink);
   --color-accent:         var(--color-ink); /* nodes, emphasis, tags, underline, icon stroke */
+  --color-section-header-border: var(--color-body-ink); /* Every section-header border; never primary Ink. */
+
+  /* ---- Information-architecture roles ---- */
+  --color-surface-raised:              var(--color-soft-ivory);
+  --color-border:                      var(--color-pale-sand);
+  --color-structural-control:          var(--color-body-ink);
+  --color-structural-secondary:        var(--color-fog-stone);
+  --color-mineral-canvas:              var(--color-mineral-frost);
+  --color-mineral-surface:             var(--color-pale-mineral);
+  --color-mineral-border:              var(--color-sea-glass);
+  --color-mineral-structural-control:  var(--color-mineral-body-ink);
+  --color-mineral-structural-secondary: var(--color-mineral-stone);
+  --color-mineral-primary:             var(--color-mineral-ink);
 
   /* ---- Typography ---- */
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
@@ -52,6 +73,23 @@
   --type-h2-size: 18.5px;
   --type-h2-color: var(--color-fog-stone);
 
+  --type-ia-level-1-font: var(--font-sans);
+  --type-ia-level-1-weight: 700;
+  --type-ia-level-1-size: 20px;
+
+  --type-ia-level-2-font: var(--font-sans);
+  --type-ia-level-2-weight: 700;
+  --type-ia-level-2-size: 16.5px;
+
+  --type-ia-level-3-font: var(--font-sans);
+  --type-ia-level-3-weight: 700;
+  --type-ia-level-3-size: 14.5px;
+
+  --type-compact-copy-size: 13.5px;
+  --type-ia-code-meta-size: 10.5px;
+  --type-ia-subcard-meta-size: 9.5px;
+  --type-ia-primary-marker-size: 17px;
+
   --type-body-font: var(--font-sans);
   --type-body-weight: 400;
   --type-body-size: 15.5px;
@@ -63,10 +101,34 @@
   --space-tight: 8px;        /* icon/label gaps, swatch-pill spacing, tag internals */
   --space-compact: 16px;     /* grid gaps, swatch/accent cell padding, spec-row gaps */
   --space-standard: 24px;    /* element-row padding, section notes, accent-cell padding */
-  --space-comfortable: 32px; /* page side margin, padding-scale strip padding */
+  --space-comfortable: 32px; /* default page side margin, padding-scale strip padding */
   --space-rhythm: 48px;      /* type-card internal padding */
-  --space-section: 64px;     /* space between major sections, page top padding */
-  --space-page: 96px;        /* page bottom padding, page close */
+  --space-section: 64px;     /* space between major sections, default page top padding */
+  --space-page: 96px;        /* default page bottom padding, page close */
+
+  /* ---- Information-architecture layout rules, validated in Product Anatomy V8 ---- */
+  --space-ia-page-top: 40px;
+  --space-ia-page-side: 48px;
+  --space-ia-page-bottom: 64px;
+  --space-ia-primary-gap: 22px;
+  --space-ia-nested-gap: 16px;
+
+  /* ---- Component geometry and interaction ---- */
+  --radius-tag: 4px;
+  --radius-control: 8px;
+  --radius-card-inner: 10px;
+  --radius-card-outer: 12px;
+  --size-ia-primary-marker: 42px;
+  --size-ia-secondary-marker: 36px;
+  --radius-ia-primary-marker: 9px;
+  --shadow-raised: 0 1px 2px rgba(13, 16, 21, 0.04), 0 6px 16px -8px rgba(13, 16, 21, 0.10);
+  --shadow-raised-mineral: 0 1px 2px rgba(13, 21, 18, 0.04), 0 6px 16px -8px rgba(13, 21, 18, 0.10);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-edit-offset: 3px;
+  --radius-edit-focus: 3px;
+  --motion-disclosure: 150ms;
+  --ia-canvas-min-width: 1280px;
 }
 
 /* ---- Utility classes (optional, safe to delete if unused) ---- */
