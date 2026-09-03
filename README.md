@@ -1,6 +1,6 @@
 # The Blueprint Diagram Design System
 
-*Design system · element sheet · v4*
+*Design system · element sheet · v5 · 3 September 2026*
 
 Five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.
 
