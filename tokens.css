@@ -1,6 +1,6 @@
 /* ==========================================================================
    The Blueprint Diagram Design System — tokens
-   Design system · element sheet · v8
+   Design system · element sheet · v9
    ========================================================================== */
 
 :root {
@@ -11,6 +11,14 @@
   --color-fog-stone:  #6C6D6C;
   --color-body-ink:   #48494B; /* Long-form reading tone; not an accent. */
   --color-ink:        #0D1015;
+
+  /* ---- Contextual green palette: six swatches (light to dark) ---- */
+  --color-green-cloud-white: #FBFCFA;
+  --color-green-sage-frost:  #F1F5EF;
+  --color-green-sage-frame:  #C1D0BB;
+  --color-green-moss:        #6E8768;
+  --color-green-body-ink:    #5F6D61; /* Long-form reading tone; not an accent. */
+  --color-green-forest-ink:  #253028;
 
   /* ---- Color: role aliases ---- */
   --color-field-1:        var(--color-milk-frost);
