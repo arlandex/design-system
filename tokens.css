@@ -1,6 +1,6 @@
 /* ==========================================================================
    The Blueprint Diagram Design System — tokens
-   Design system · element sheet · v7
+   Design system · element sheet · v8
    ========================================================================== */
 
 :root {
@@ -25,7 +25,7 @@
   --color-accent:         var(--color-ink); /* nodes, emphasis, tags, underline, icon stroke */
 
   /* ---- Typography ---- */
-  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
 
   --type-eyebrow-font: var(--font-mono);
