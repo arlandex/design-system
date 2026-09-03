@@ -1,6 +1,6 @@
 # The Blueprint Diagram Design System
 
-*Design system · element sheet · v5 · 3 September 2026*
+*Design system · element sheet · v6 · 3 September 2026*
 
 Five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.
 
@@ -17,10 +17,10 @@ This repo is the reusable, code-side version of the system: a static reference s
 | Milk Frost | `#F0EFEC` |
 | Soft Ivory | `#EAE1D7` |
 | Pale Sand | `#D8C9B6` |
-| Fog Stone | `#828280` |
+| Fog Stone | `#6C6D6C` |
 | Ink | `#0D1015` |
 
-One derived tone isn't one of the five: body-copy ink (`#48494B`), an even split of Ink and Fog Stone, used only so long paragraphs pass normal reading contrast.
+Supporting reading tone: body-copy ink (`#48494B`) is calibrated for long-paragraph contrast. It is documented separately because it is an accessibility token, not a sixth base swatch.
 
 ## Accents
 
