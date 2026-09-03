@@ -1,6 +1,6 @@
 # The Blueprint Diagram Design System
 
-*Design system · element sheet · v7 · 3 September 2026*
+*Design system · element sheet · v8 · 3 September 2026*
 
 Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate green colourway is reserved for specific information-architecture HTML pages.
 
@@ -37,14 +37,14 @@ Ink, off the node. Same rule wherever it lands: boldest thing in view, used spar
 
 ## Typography
 
-Work Sans (headings/body) paired with IBM Plex Mono (eyebrows/measurement labels).
+Source Sans 3 (headings/body) paired with IBM Plex Mono (eyebrows/measurement labels).
 
 | Role | Spec |
 |---|---|
 | Eyebrow | IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone |
-| H1 | Work Sans 700, clamp 24–30px, Ink |
-| H2 | Work Sans 600, 18.5px, Fog Stone |
-| Body | Work Sans 400, 15.5px / 1.5 line-height, Body Ink (`#48494B`), max 58ch measure |
+| H1 | Source Sans 3 700, clamp 24–30px, Ink |
+| H2 | Source Sans 3 600, 18.5px, Fog Stone |
+| Body | Source Sans 3 400, 15.5px / 1.5 line-height, Body Ink (`#48494B`), max 58ch measure |
 
 ## Spacing scale
 
