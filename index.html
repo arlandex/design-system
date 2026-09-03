@@ -22,6 +22,20 @@
     display: block;
     margin-bottom: var(--space-compact);
   }
+  .release-line { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-compact); }
+  .release-line .eyebrow { margin-bottom: 0; }
+  .release-pill {
+    display: inline-flex;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--color-soft-ivory);
+    color: var(--color-fog-stone);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
   h1.title {
     margin: 0 0 var(--space-standard);
     line-height: 1.15;
@@ -106,7 +120,10 @@
 <body>
 <div class="wrap">
 
-  <span class="eyebrow">Design system, element sheet, v4</span>
+  <div class="release-line">
+    <span class="eyebrow">Design system · Element sheet</span>
+    <span class="release-pill">V5 <span aria-hidden="true">|</span> 3 September 2026</span>
+  </div>
   <h1 class="title">The Blueprint Diagram design system</h1>
   <p class="intro">This is the design system behind these diagram illustrations: five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.</p>
 
