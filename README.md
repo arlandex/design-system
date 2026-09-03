@@ -1,8 +1,8 @@
 # The Blueprint Diagram Design System
 
-*Design system · element sheet · v9 · 3 September 2026*
+*Design system · element sheet · v10 · 3 September 2026*
 
-Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate green colourway is reserved for specific information-architecture HTML pages.
+Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate Mineral colourway is reserved for specific information-architecture HTML pages.
 
 This repo is the reusable, code-side version of the system: a static reference sheet (`index.html`), CSS custom properties (`tokens.css`), and the same values as plain JSON (`tokens.json`), so the palette, type scale, and spacing scale can be pulled into other projects without re-deriving them from the artifact each time.
 
@@ -23,20 +23,20 @@ This repo is the reusable, code-side version of the system: a static reference s
 
 Body Ink is the default palette's long-form reading tone. It is a functional neutral, not an accent.
 
-### Contextual green palette
+### Contextual Mineral palette
 
 Reserved for specific information-architecture HTML pages.
 
 | Name | Hex |
 |---|---|
-| Cloud White | `#FBFCFA` |
-| Sage Frost | `#F1F5EF` |
-| Sage Frame | `#C1D0BB` |
-| Moss | `#6E8768` |
-| Body Ink | `#5F6D61` |
-| Forest Ink | `#253028` |
+| Mineral Frost | `#F2F5F4` |
+| Pale Mineral | `#E3E9E7` |
+| Sea Glass | `#C6D1CE` |
+| Mineral Stone | `#63716D` |
+| Body Ink | `#414C48` |
+| Ink | `#0D1512` |
 
-The green Body Ink is the contextual palette's long-form reading tone. Both strips use six aligned positions.
+The Mineral Body Ink is the contextual palette's long-form reading tone. Both strips use six aligned positions.
 
 ## Accents
 
