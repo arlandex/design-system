@@ -1,8 +1,8 @@
 # The Blueprint Diagram Design System
 
-*Design system · element sheet · v6 · 3 September 2026*
+*Design system · element sheet · v7 · 3 September 2026*
 
-Five color tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type.
+Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate green colourway is reserved for specific information-architecture HTML pages.
 
 This repo is the reusable, code-side version of the system: a static reference sheet (`index.html`), CSS custom properties (`tokens.css`), and the same values as plain JSON (`tokens.json`), so the palette, type scale, and spacing scale can be pulled into other projects without re-deriving them from the artifact each time.
 
@@ -18,9 +18,10 @@ This repo is the reusable, code-side version of the system: a static reference s
 | Soft Ivory | `#EAE1D7` |
 | Pale Sand | `#D8C9B6` |
 | Fog Stone | `#6C6D6C` |
+| Body Ink | `#48494B` |
 | Ink | `#0D1015` |
 
-Supporting reading tone: body-copy ink (`#48494B`) is calibrated for long-paragraph contrast. It is documented separately because it is an accessibility token, not a sixth base swatch.
+Body Ink is the default palette's long-form reading tone. It is a functional neutral, not an accent.
 
 ## Accents
 
@@ -43,7 +44,7 @@ Work Sans (headings/body) paired with IBM Plex Mono (eyebrows/measurement labels
 | Eyebrow | IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone |
 | H1 | Work Sans 700, clamp 24–30px, Ink |
 | H2 | Work Sans 600, 18.5px, Fog Stone |
-| Body | Work Sans 400, 15.5px / 1.5 line-height, body ink (derived, `#48494B`), max 58ch measure |
+| Body | Work Sans 400, 15.5px / 1.5 line-height, Body Ink (`#48494B`), max 58ch measure |
 
 ## Spacing scale
 
