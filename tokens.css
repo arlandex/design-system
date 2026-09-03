@@ -1,6 +1,6 @@
 /* ==========================================================================
-   The Blueprint Diagram Design System — tokens
-   Design system · element sheet · v10
+   Nataliya's Style Guide, tokens
+   Style guide · v12
    ========================================================================== */
 
 :root {
@@ -55,9 +55,9 @@
   --type-body-font: var(--font-sans);
   --type-body-weight: 400;
   --type-body-size: 15.5px;
-  --type-body-line-height: 1.5;
+  --type-body-line-height: 1.4;
   --type-body-color: var(--color-body-ink);
-  --type-body-measure: 58ch;
+  --type-body-measure: 100%;
 
   /* ---- Spacing scale: 8 → 96, ~1.5x per step ---- */
   --space-tight: 8px;        /* icon/label gaps, swatch-pill spacing, tag internals */

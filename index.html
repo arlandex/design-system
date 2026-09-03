@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Blueprint Diagram Design System</title>
+<title>Nataliya's Style Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=10">
+<link rel="stylesheet" href="tokens.css?v=12">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -22,7 +22,7 @@
     display: block;
     margin-bottom: var(--space-compact);
   }
-  .release-line { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: var(--space-compact); }
+  .release-line { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
   .release-line .eyebrow { margin-bottom: 0; }
   .release-pill {
     display: inline-flex;
@@ -44,49 +44,55 @@
     font-size: var(--type-body-size);
     line-height: var(--type-body-line-height);
     color: var(--color-body-ink);
-    max-width: var(--type-body-measure);
+    width: 100%;
+    max-width: none;
     margin: 0 0 var(--space-section);
   }
   section { margin-bottom: var(--space-section); }
   .section-head {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid var(--color-pale-sand);
-    padding-bottom: var(--space-compact);
+    align-items: center;
+    gap: var(--space-compact);
+    background: var(--color-fog-stone);
+    border-radius: 8px;
+    padding: 10px var(--space-compact);
     margin-bottom: var(--space-compact);
   }
   .section-head h2 {
     font-size: 20px;
     font-weight: 700;
-    color: var(--color-ink);
+    color: var(--color-milk-frost);
     margin: 0;
   }
   .section-head .tag {
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
-    color: var(--color-fog-stone);
+    color: var(--color-milk-frost);
     text-transform: uppercase;
   }
   p.note { color: var(--color-body-ink); font-size: 14.5px; line-height: 1.5; }
 
-  /* Swatches */
+  /* Colour swatches */
   .palette-label { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-compact); margin: 0 0 var(--space-tight); }
   .palette-label + .swatch-row { margin-top: 0; }
   .palette-label.contextual { margin-top: var(--space-standard); }
   .palette-label .palette-name { font-size: 13px; font-weight: 700; color: var(--color-ink); }
   .palette-label .palette-use { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); text-align: right; }
-  .swatch-row { display: flex; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
+  .swatch-row { display: flex; height: 152px; border: 1px solid var(--color-pale-sand); border-radius: 4px; overflow: hidden; }
   .swatch-row.mineral-colourway { border-color: #C6D1CE; }
   .swatch {
     flex: 1 1 0;
     min-width: 0;
+    height: 100%;
     padding: var(--space-standard) var(--space-compact);
     font-family: var(--font-sans);
+    display: flex;
+    flex-direction: column;
   }
-  .swatch .name { font-weight: 700; font-size: 13px; margin-bottom: var(--space-rhythm); display: block; }
-  .swatch .hex { font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
+  .swatch .name { font-weight: 700; font-size: 13px; display: block; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 12px; opacity: 0.75; margin-top: auto; white-space: nowrap; }
   .swatch.light { color: var(--color-ink); }
   .swatch.dark { color: var(--color-milk-frost); }
 
@@ -94,18 +100,28 @@
   .table { border: 1px solid var(--color-pale-sand); border-radius: 4px; display: grid; grid-template-columns: repeat(5, 1fr); }
   .table .cell { padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); }
   .table .cell:last-child { border-right: none; }
-  .table .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); margin-bottom: var(--space-tight); display: block; }
+  .table .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); margin-bottom: var(--space-standard); display: block; }
 
   .node-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--color-ink); }
   .tag-pill { display: inline-block; background: var(--color-ink); color: var(--color-milk-frost); font-family: var(--font-mono); font-size: 11px; padding: 4px 10px; border-radius: 3px; }
-  .icon-box { width: 28px; height: 28px; border: 1.5px solid var(--color-ink); border-radius: 6px; }
+  .icon-box { width: 20px; height: 20px; border: 1.5px solid var(--color-ink); border-radius: 4px; }
+
+  /* Type colour roles */
+  .type-role-strip { border: 1px solid var(--color-pale-sand); border-radius: 4px; display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: var(--space-standard); overflow: hidden; }
+  .type-role { padding: var(--space-compact); border-right: 1px solid var(--color-pale-sand); }
+  .type-role:last-child { border-right: none; }
+  .type-role .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); display: block; margin-bottom: var(--space-standard); }
+  .type-role .colour { display: flex; align-items: center; gap: var(--space-tight); font-weight: 700; margin-bottom: var(--space-tight); }
+  .type-role .chip { width: 20px; height: 20px; border-radius: 3px; flex: 0 0 auto; }
+  .type-role .hex { color: inherit; font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
 
   /* Type card */
   .type-card { border: 1px solid var(--color-pale-sand); border-radius: 6px; padding: var(--space-rhythm); background: white; }
   .type-card .eyebrow { color: var(--color-fog-stone); }
   .type-card h3 { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); margin: var(--space-compact) 0; color: var(--color-ink); }
   .type-card h4 { font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); color: var(--color-fog-stone); margin: 0 0 var(--space-standard); }
-  .type-card p { font-size: var(--type-body-size); line-height: var(--type-body-line-height); color: var(--color-body-ink); max-width: var(--type-body-measure); }
+  .type-card p { font-size: var(--type-body-size); line-height: var(--type-body-line-height); color: var(--color-body-ink); max-width: var(--type-body-measure); margin: 0; }
+  .type-card p + p { margin-top: 4px; }
   .type-specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-compact); border-top: 1px solid var(--color-pale-sand); padding-top: var(--space-standard); margin-top: var(--space-standard); }
   .type-specs .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fog-stone); display: block; margin-bottom: var(--space-tight); }
   .type-specs .val { font-size: 13px; color: var(--color-ink); }
@@ -115,7 +131,7 @@
   .space-bars { display: flex; align-items: flex-end; gap: var(--space-compact); margin-bottom: var(--space-tight); }
   .space-bars .bar { background: var(--color-fog-stone); height: 14px; }
   .space-labels { display: flex; gap: var(--space-compact); font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-stone); margin-bottom: var(--space-standard); }
-  .space-table .row { display: grid; grid-template-columns: 140px 60px 1fr; padding: var(--space-compact) 0; border-top: 1px solid var(--color-pale-sand); font-size: 13.5px; }
+  .space-table .row { display: grid; grid-template-columns: 140px 60px 1fr; padding: var(--space-tight) 0; border-top: 1px solid var(--color-pale-sand); font-size: var(--type-body-size); }
   .space-table .row:first-child { border-top: none; }
   .space-table .name { font-weight: 700; }
   .space-table .px { color: var(--color-fog-stone); font-family: var(--font-mono); }
@@ -127,14 +143,14 @@
 <div class="wrap">
 
   <div class="release-line">
-    <span class="eyebrow">Design system · Element sheet</span>
-    <span class="release-pill">V10 <span aria-hidden="true">|</span> 3 September 2026</span>
+    <span class="eyebrow">Style guide</span>
+    <span class="release-pill">V12 <span aria-hidden="true">|</span> 3 September 2026</span>
   </div>
-  <h1 class="title">The Blueprint Diagram design system</h1>
-  <p class="intro">This system supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The Mineral colourway is a contextual alternative reserved for specific information-architecture pages; it does not replace the default.</p>
+  <h1 class="title">Nataliya's style guide</h1>
+  <p class="intro">This style guide supports both diagram illustrations and structurally similar, information-architecture-led HTML pages. The warm-neutral colourway is the default across the system. The Mineral colourway is a contextual alternative reserved for specific information-architecture pages; it does not replace the default.</p>
 
   <section>
-    <div class="section-head"><h2>Swatches</h2><span class="tag">Light to dark</span></div>
+    <div class="section-head"><h2>Colour swatches</h2><span class="tag">Light to dark</span></div>
     <div class="palette-label">
       <span class="palette-name">Default · Warm neutral</span>
       <span class="palette-use">Use across general pages</span>
@@ -163,37 +179,55 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Accents</h2><span class="tag">Five uses, one swatch</span></div>
-    <p class="note">Ink, off the node. Same rule wherever it lands: boldest thing in view, used sparingly, never as a background.</p>
+    <div class="section-head"><h2>Accents</h2><span class="tag">Approved accent uses</span></div>
+    <p class="note">Use the active colourway's Ink token for accents. The five treatments below are the currently approved uses, not a limit on future patterns. Any new use should serve the same focal or signalling purpose, remain the boldest element in view and never become a page background.</p>
     <div class="table">
       <div class="cell"><span class="label">Node</span><div class="node-dot"></div></div>
       <div class="cell"><span class="label">Emphasis</span>Ship the <strong>draft</strong>, not the plan.</div>
       <div class="cell"><span class="label">Tag</span><span class="tag-pill">WORKFLOW</span></div>
-      <div class="cell"><span class="label">Underline</span><span style="text-decoration: underline; font-weight:700;">Draft</span></div>
+      <div class="cell"><span class="label">Underline</span><span style="text-decoration: underline;">Draft</span></div>
       <div class="cell"><span class="label">Icon stroke</span><div class="icon-box"></div></div>
     </div>
   </section>
 
   <section>
     <div class="section-head"><h2>Fonts and headers</h2><span class="tag">Type roles</span></div>
-    <p class="note">Ink carries headlines. Body copy uses Body Ink (#48494B), the dedicated reading tone between Fog Stone and Ink, so long paragraphs don't sit at full headline weight while still holding proper reading contrast.</p>
+    <p class="note">Three colour roles create the type hierarchy in the default colourway. Mineral pages use the corresponding Mineral tokens in the same roles.</p>
+    <div class="type-role-strip" aria-label="Default colourway type roles">
+      <div class="type-role">
+        <span class="label">Headlines</span>
+        <span class="colour"><span class="chip" style="background:#0D1015"></span>Ink</span>
+        <span class="hex">#0D1015</span>
+      </div>
+      <div class="type-role">
+        <span class="label">Subheads and labels</span>
+        <span class="colour"><span class="chip" style="background:#6C6D6C"></span>Fog Stone</span>
+        <span class="hex">#6C6D6C</span>
+      </div>
+      <div class="type-role">
+        <span class="label">Body copy</span>
+        <span class="colour"><span class="chip" style="background:#48494B"></span>Body Ink</span>
+        <span class="hex">#48494B</span>
+      </div>
+    </div>
     <div class="type-card">
       <span class="eyebrow">Content workflow, case study</span>
       <h3>Ship the draft before the plan is finished</h3>
       <h4>What changed when we stopped waiting for perfect briefs</h4>
-      <p>Most teams treat the outline as a gate: nothing moves until it's approved. Loosening that one rule is what actually shortened the cycle — drafts started circulating a full day earlier, and the plan caught up around them instead of ahead of them.</p>
+      <p>Most teams treat the outline as a gate: nothing moves until it's approved. Loosening that one rule is what actually shortened the cycle.</p>
+      <p>Drafts started circulating a full day earlier, and the plan caught up around them instead of ahead of them.</p>
       <div class="type-specs">
         <div><span class="label">Eyebrow</span><span class="val">IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone</span></div>
         <div><span class="label">H1</span><span class="val">Source Sans 3 700, clamp 24–30px, Ink</span></div>
         <div><span class="label">H2</span><span class="val">Source Sans 3 600, 18.5px, Fog Stone</span></div>
-        <div><span class="label">Body</span><span class="val">Source Sans 3 400, 15.5px / 1.5, Body Ink, max 58ch</span></div>
+        <div><span class="label">Body</span><span class="val">Source Sans 3 400, 15.5px / 1.4, Body Ink, full width</span></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-head"><h2>Padding</h2><span class="tag">8 to 96, spacing scale</span></div>
-    <p class="note">Seven steps, each roughly one and a half times the last. Everything on this sheet snaps to one of these — nothing sits in between.</p>
+    <p class="note">Seven steps, each roughly one and a half times the last. Everything on this sheet snaps to one of these. Nothing sits in between.</p>
     <div class="space-strip">
       <div class="space-bars">
         <div class="bar" style="width:8px"></div>

@@ -1,6 +1,6 @@
-# The Blueprint Diagram Design System
+# Nataliya's Style Guide
 
-*Design system · element sheet · v10 · 3 September 2026*
+*Style guide · v12 · 3 September 2026*
 
 Six default warm-neutral colour tokens and a set of diagram roles, translated from a Pinterest moodboard of close-up textures — quartz, marble, fabric, sand, cloud, almost entirely warm neutrals aside from one charcoal-navy accent — into working values for field, guide layer, structure, cluster, focal point, and type. A separate Mineral colourway is reserved for specific information-architecture HTML pages.
 
@@ -8,9 +8,9 @@ This repo is the reusable, code-side version of the system: a static reference s
 
 ## Live page
 
-- [View the design system](https://arlandex.github.io/design-system/)
+- [View the style guide](https://arlandex.github.io/design-system/)
 
-## Swatches (light to dark)
+## Colour swatches (light to dark)
 
 | Name | Hex |
 |---|---|
@@ -40,7 +40,7 @@ The Mineral Body Ink is the contextual palette's long-form reading tone. Both st
 
 ## Accents
 
-Ink, off the node. Same rule wherever it lands: boldest thing in view, used sparingly, never as a background.
+Use the active colourway's Ink token for accents. The five treatments below are the currently approved uses, not a limit on future patterns. Any new use should serve the same focal or signalling purpose, remain the boldest element in view and never become a page background.
 
 | Use | Treatment |
 |---|---|
@@ -59,7 +59,7 @@ Source Sans 3 (headings/body) paired with IBM Plex Mono (eyebrows/measurement la
 | Eyebrow | IBM Plex Mono 500, 11.5px, tracked +0.14em, Fog Stone |
 | H1 | Source Sans 3 700, clamp 24–30px, Ink |
 | H2 | Source Sans 3 600, 18.5px, Fog Stone |
-| Body | Source Sans 3 400, 15.5px / 1.5 line-height, Body Ink (`#48494B`), max 58ch measure |
+| Body | Source Sans 3 400, 15.5px / 1.4 line-height, Body Ink (`#48494B`), full-width measure |
 
 ## Spacing scale
 
